@@ -12,7 +12,7 @@ If you know how base64 works, then you'll see some similarities between how both
 Let's say you have a string, for example: `Hi!`.\
 Now, convert it to binary: `01001000 01101001 00100001`.\
 Next, remove all of the spaces: `010010000110100100100001`.\
-Then, split the string in pairs of 2 characters: `01 00 10 00 01 10 10 01 00 10 00 01`.
+Then, split the string in pairs of 2 characters: `01 00 10 00 01 10 10 01 00 10 00 01` (That's where the "2" in "ste2" comes from).
 
 Then, map each pairs of characters to their corresponding letter with this:
 | Pair | Letter |
