@@ -58,10 +58,19 @@ std::vector<std::string> encodedToBinary(std::string encoded) {
     return binary;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     std::string encoded;
-    std::cout << "Enter the string to decode: ";
-    std::getline(std::cin, encoded);
+    if(argc == 1) {
+        std::cout << "Enter the string to decode: ";
+        std::getline(std::cin, encoded);
+    } else {
+        if(argc == 2) {
+            encoded = argv[1];
+        } else {
+            std::cout << "Error: too many arguments.\n";
+            return 1;
+        }
+    }
 
     std::vector<std::string> binary = encodedToBinary(encoded);
     std::vector<std::string> binary8bit = split(vectorToString(binary));

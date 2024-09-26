@@ -22,10 +22,20 @@ std::vector<std::string> split(const std::string& str) {
     return result;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     std::string toEncode;
-    std::cout << "Enter the string to encode: ";
-    std::getline(std::cin, toEncode);
+
+    if(argc == 1) {
+        std::cout << "Enter the string to encode: ";
+        std::getline(std::cin, toEncode);
+    } else {
+        std::string encodeFromArgs;
+        for(int i = 1; i!=argc; i++) {
+            encodeFromArgs += argv[i];
+            encodeFromArgs += " ";
+        }
+        toEncode = encodeFromArgs;
+    }
 
     std::string binary = stringToBinary(toEncode);
 
