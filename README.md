@@ -11,7 +11,7 @@ Encoding and decoding text is pretty easy: simply use "encode" to encode the tex
 ```sh
 ./encode Text to encode
 ```
-For decoding a text, you can use "decode":
+To decode a text, you can use "decode":
 ```sh
 ./decode CACACBCCCBADCBDDCBCACBCCCBCAABACABAA
 ```
@@ -41,8 +41,8 @@ If, for example, you want to encode and decode a program named "hi", you do some
 ./decode -f "$(cat encoded.txt)" decodedHi
 chmod +x decodedHi
 ```
-# How does it works?
-If you know how base64 works, then you'll see some similarities between how both encoders works; in fact, I just learned how base64 worked and then wanted to create my own encoder, so I basically created it using what I knew from base64.
+# How does it work?
+If you know how base64 work, then you'll see some similarities between how both encoders work; in fact, I just learned how base64 worked and then wanted to create my own encoder, so I basically created it using what I knew from base64.
 
 Let's say you have a string, for example: `Hi!`.\
 Now, convert it to binary: `01001000 01101001 00100001`.\
