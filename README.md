@@ -11,7 +11,7 @@ Encoding and decoding text is pretty easy: simply use "encode" to encode the tex
 ```sh
 ./encode Text to encode
 ```
-To decode a text, you can use "decode":
+For decoding a text, you can use "decode":
 ```sh
 ./decode CACACBCCCBADCBDDCBCACBCCCBCAABACABAA
 ```
@@ -29,20 +29,21 @@ Do decode a file, you can use "decode" with the "-f" argument like so, using out
 ./decode -f CBBACBBCABACABAA outputfile
 ```
 If you do not specify an output file, it will write the output to "decoded.bin" by default.
-You can, again, use some bash magic to decode from a file:
+
+If you want to decode from a file and write the output to another file, you can use the "-F" option, like so:
 ```sh
-./decode -f "$(cat encoded.txt)" decoded
+./decode -F output input.txt
 ```
 
 If, for example, you want to encode and decode a program named "hi", you do something like this:
 ```sh
 ./encode -f hi > encoded.txt
 
-./decode -f "$(cat encoded.txt)" decodedHi
+./decode -F decodedHi encoded.txt
 chmod +x decodedHi
 ```
-# How does it work?
-If you know how base64 work, then you'll see some similarities between how both encoders work; in fact, I just learned how base64 worked and then wanted to create my own encoder, so I basically created it using what I knew from base64.
+# How does it works?
+If you know how base64 works, then you'll see some similarities between how both encoders works; in fact, I just learned how base64 worked and then wanted to create my own encoder, so I basically created it using what I knew from base64.
 
 Let's say you have a string, for example: `Hi!`.\
 Now, convert it to binary: `01001000 01101001 00100001`.\
@@ -74,3 +75,5 @@ So:
 ```
 Which gives us the following encoded string: `CABACBBCABAC`\
 So, `Hi!` turns into `CABACBBCABAC` after being encoded.
+
+The same process is used to encode a file, the only difference being that we take the binary of the file instead of converting some text to binary.
