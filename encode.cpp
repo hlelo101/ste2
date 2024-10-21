@@ -63,7 +63,7 @@ int encodeFromText(std::string toEncode) {
 }
 
 std::string getTextFromFile(std::string fileName) {
-        std::ifstream inputFile(fileName, std::ios::binary);
+    std::ifstream inputFile(fileName, std::ios::binary);
 
     if (!inputFile) {
         std::cerr << "File could not be opened!" << std::endl;
@@ -87,7 +87,7 @@ std::string getTextFromFile(std::string fileName) {
 
 void printHelp() {
     std::cout << "Syntax: encode <argument>(optional) <text or file to encode>\n";
-    std::cout << "Arguments:\n-f file. Encodes from a file. Ex: encode file\n-t text. The default argument, encodes from a string. Ex: encode hello!" << std::endl;
+    std::cout << "Arguments:\n-f file. Encodes from a file. Ex: encode -f file\n-t text. The default argument, encodes from a string. Ex: encode hello!" << std::endl;
 }
 
 int main(int argc, char *argv[]) {
