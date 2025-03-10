@@ -7,16 +7,16 @@ g++ -o encode encode.cpp --static && g++ -o decode decode.cpp --static
 ```
 I haven't tested it with other compilers, but it should work (it's a simple 1 file (well 2 technically) project).
 # Encode/decode text
-Encoding and decoding text is pretty easy: simply use "encode" to encode the text with: 
+Encoding and decoding text is pretty easy: simply use "encode" to encode some text. You can do it with: 
 ```sh
 ./encode Text to encode
 ```
-For decoding a text, you can use "decode":
+To decode a text, you can use "decode":
 ```sh
 ./decode CACACBCCCBADCBDDCBCACBCCCBCAABACABAA
 ```
 # Encode/decode files
-You'll need to use the "-f" argument to encode and decode a file. To encode a file, use this, where "filename" is the name of the file you want to encode:
+You'll need to use the "-f" option to encode and decode a file. To encode a file, use this, where "filename" is the name of the file you want to encode:
 ```sh
 ./encode filename
 ```
@@ -35,15 +35,15 @@ If you want to decode from a file and write the output to another file, you can 
 ./decode -F output input.txt
 ```
 
-If, for example, you want to encode and decode a program named "hi", you do something like this:
+If, for example, you want to encode and decode a program named "hi", you can do something like this:
 ```sh
 ./encode -f hi > encoded.txt
 
 ./decode -F decodedHi encoded.txt
 chmod +x decodedHi
 ```
-# How does it works?
-If you know how base64 works, then you'll see some similarities between how both encoders works; in fact, I just learned how base64 worked and then wanted to create my own encoder, so I basically created it using what I knew from base64.
+# How does it work?
+If you know how base64 works, then you'll see some similarities between how both encoders work; in fact, I just learned how base64 works and then wanted to create my own encoder, so I basically created it using what I knew from base64.
 
 Let's say you have a string, for example: `Hi!`.\
 Now, convert it to binary: `01001000 01101001 00100001`.\
